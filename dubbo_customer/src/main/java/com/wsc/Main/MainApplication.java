@@ -9,7 +9,7 @@ public class MainApplication {
     public static void main(String[] args) throws IOException {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("consumer.xml");
         doHelloService doHelloService = applicationContext.getBean(doHelloService.class);
-        doHelloService.Hello("小玲！！！");
+        System.out.println(doHelloService.Hello("hello dubbo！！！"));
         System.in.read();
     }
 }

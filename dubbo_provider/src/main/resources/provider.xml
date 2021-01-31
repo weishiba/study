@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <!--1,指定当前服务名字(唯一)-->
+    <dubbo:application name="dubbo-provider"/>
+    <!--2,指定注册中心的位置-->
+    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+    <!--3，指定通信协议规则-->
+    <dubbo:protocol name="dubbo" port="20880"/>
+    <!--4，暴露服务 ref指向真正的实现类-->
+    <dubbo:service interface="service.HelloService" ref="helloServiceImpl"/>
+    <!--服务的实现-->
+    <bean id="helloServiceImpl" class="com.wsc.service.impl.helloServiceImpl"/>
+
+</beans>

@@ -15,7 +15,6 @@ public class dohelloServiceImpl implements doHelloService {
     HelloService helloService;
     @Override
     public String Hello(String name) {
-        System.out.println("姓名:"+name);
-        return "服务消费者："+ helloService.Hello(name);
+        return "consumer:"+ helloService.Hello(name);
     }
 }

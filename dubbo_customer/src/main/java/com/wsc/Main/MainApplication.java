@@ -10,6 +10,7 @@ public class MainApplication {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("consumer.xml");
         doHelloService doHelloService = applicationContext.getBean(doHelloService.class);
         System.out.println(doHelloService.Hello("hello dubbo!"));
+        System.out.println("测试github");
         System.in.read();
     }
 }

@@ -5,7 +5,10 @@ import org.springframework.stereotype.Service;
 import service.HelloService;
 import service.doHelloService;
 
+import java.sql.SQLOutput;
+
 /**
+ * 消费者实现方法
  * 1，服务提供者注册到注册中心
  * 2.
  */
@@ -15,6 +18,7 @@ public class dohelloServiceImpl implements doHelloService {
     HelloService helloService;
     @Override
     public String Hello(String name) {
-        return "consumer:"+ helloService.Hello(name);
+        System.out.println(helloService.Hello(name));
+        return "consumer:" + name;
     }
 }
